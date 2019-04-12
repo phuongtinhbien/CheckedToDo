@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_create_note"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:behavior_peekHeight="0dp"
+    app:behavior_hideable="true"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+    <com.google.android.material.card.MaterialCardView
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_8dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="@dimen/elevation_0dp"
+        app:cardCornerRadius="@dimen/corner"
+        android:foreground="?android:selectableItemBackground">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:id="@+id/layout_mini_post_recipe_img_avatar"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="@dimen/margin_8dp"
+                    android:scaleType="centerInside"
+                    android:background="@drawable/circle"
+                    android:src="@drawable/ic_notifications_none_black_24dp" />
+                <TextView
+                    android:id="@+id/layout_mini_post_recipe_tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/layout_mini_post_recipe_img_avatar"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="0.1"
+                    android:text="@string/reminder"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/item_thumail_tv_sub_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout_mini_post_recipe_tv_name"
+                    android:layout_toEndOf="@id/layout_mini_post_recipe_img_avatar"
+                    android:fontFamily="sans-serif"
+                    android:letterSpacing="0.1"
+                    android:text="@string/important"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/margin"
+                android:hint="Type your note"
+                android:background="@drawable/bg_content"
+                android:textColor="@android:color/black"
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:lines="5"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/layout_create_note_ln_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:layout_margin="@dimen/margin_4dp"
+                    android:background="@drawable/rounded_box"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8dp"
+                        android:fontFamily="sans-serif"
+                        android:letterSpacing="0.1"
+                        android:text="Location"
+                        android:textColor="@color/darktext"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="School - CTU"
+                        android:layout_marginTop="@dimen/margin_8dp"
+                        android:textColor="@android:color/black"
+                        android:textFontWeight="1"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="0.1"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layout_create_note_ln_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:layout_margin="@dimen/margin_4dp"
+                    android:background="@drawable/rounded_box"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8dp"
+                        android:fontFamily="sans-serif"
+                        android:letterSpacing="0.1"
+                        android:text="Time"
+                        android:textColor="@color/darktext"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/layout_create_note_tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="April 16, 8:30"
+                        android:layout_marginTop="@dimen/margin_8dp"
+                        android:textColor="@android:color/black"
+                        android:textFontWeight="1"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="0.1"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin" />
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cornerRadius="@dimen/corner"
+                android:text="@string/save"
+                android:padding="@dimen/margin"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/margin_8dp"/>
+        </LinearLayout>
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

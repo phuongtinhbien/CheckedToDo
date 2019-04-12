@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/bg"
+    tools:context=".domains.main.ScrollingActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        android:fitsSystemWindows="true"
+        app:elevation="0dp"
+        android:background="@android:color/transparent"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@android:color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_collapseMode="parallax"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="@dimen/margin">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/layout_mini_post_recipe_img_avatar"
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:layout_marginEnd="@dimen/margin_8dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/profile_image"
+                        app:civ_border_color="@color/white"
+                        app:civ_border_width="4dp"/>
+                    <TextView
+                        android:id="@+id/layout_mini_post_recipe_tv_name"
+                        android:layout_toEndOf="@id/layout_mini_post_recipe_img_avatar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lines="2"
+                        android:fontFamily="sans-serif-black"
+                        android:letterSpacing="0.1"
+                        android:text="Donna Mazloomdoost"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textSize="32sp" />
+                    <TextView
+                        android:id="@+id/item_thumail_tv_sub_name"
+                        android:layout_toEndOf="@id/layout_mini_post_recipe_img_avatar"
+                        android:layout_below="@id/layout_mini_post_recipe_tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:text="newbee"
+                        android:textSize="18sp"
+                        android:fontFamily="sans-serif-light" />
+                </RelativeLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_scrolling" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|end"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/ic_mode_edit_black_24dp"
+        android:tint="@android:color/white"/>
+    <View
+        android:visibility="gone"
+        android:id="@+id/bg"
+        android:background="#99000000"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"/>
+
+    <include layout="@layout/layout_create_note"
+        />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

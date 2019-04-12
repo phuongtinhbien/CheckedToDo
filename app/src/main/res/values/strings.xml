@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CheckedToDo</string>
+    <string name="action_settings">Settings</string>
+    <string name="rich_text">The Green house Intelligent Food. It\'s so good for your health.The Green house Intelligent Food. It\'s so good for your health</string>
+    <string name="snooze">snooze</string>
+    <string name="completed">completed</string>
+    <string name="reminder">Reminder</string>
+    <string name="important">important</string>
+    <string name="save">SAVE</string>
+</resources>
