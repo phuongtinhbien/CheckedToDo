@@ -74,7 +74,7 @@ public class ScrollingActivity extends BaseActivity<MainView, MainPresenter> imp
     @ViewById(R.id.layout_create_note_tv_time)
     TextView selectedTime;
 
-    BottomSheetBehavior sheetBehavior;
+    private BottomSheetBehavior sheetBehavior;
 
 
     @AfterInject
@@ -170,13 +170,32 @@ public class ScrollingActivity extends BaseActivity<MainView, MainPresenter> imp
         });
 
         fab.setOnClickListener(view -> {
-            if (sheetBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
-                fab.setImageResource(R.drawable.ic_close_black_24dp);
-                sheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
-            } else {
-                sheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-                fab.setImageResource(R.drawable.ic_mode_edit_black_24dp);
-            }
+            updateBottomBehavior();
         });
+    }
+
+    public BottomSheetBehavior getSheetBehavior() {
+        return sheetBehavior;
+    }
+
+    private void updateBottomBehavior(){
+        if (sheetBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED) {
+            fab.setImageResource(R.drawable.ic_close_black_24dp);
+            sheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+        } else {
+            sheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+            fab.setImageResource(R.drawable.ic_mode_edit_black_24dp);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (sheetBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED){
+            updateBottomBehavior();
+        }
+        else{
+            super.onBackPressed();
+        }
+
     }
 }

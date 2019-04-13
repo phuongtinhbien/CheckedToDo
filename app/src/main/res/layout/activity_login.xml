@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:fitsSystemWindows="true">
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+        android:layout_margin="@dimen/margin">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/layout_mini_post_recipe_img_avatar"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:layout_marginEnd="@dimen/margin_8dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile_image"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="4dp"/>
+        <TextView
+            android:id="@+id/layout_mini_post_recipe_tv_name"
+            android:layout_toEndOf="@id/layout_mini_post_recipe_img_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="2"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.1"
+            android:text="Donna Mazloomdoost"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="32sp" />
+        <TextView
+            android:id="@+id/item_thumail_tv_sub_name"
+            android:layout_toEndOf="@id/layout_mini_post_recipe_img_avatar"
+            android:layout_below="@id/layout_mini_post_recipe_tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="newbee"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-light" />
+    </RelativeLayout>
+    <com.google.android.material.card.MaterialCardView
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="@dimen/elevation_0dp"
+        app:cardCornerRadius="@dimen/corner"
+        android:layout_gravity="bottom"
+        android:foreground="?android:selectableItemBackground">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="0.1"
+                android:text="@string/login"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:textSize="32sp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:background="@drawable/bg_content"
+                android:textColor="@android:color/black"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="0.1"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/margin"
+                android:hint="Password"
+                android:background="@drawable/bg_content"
+                android:textColor="@android:color/black"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="0.1"             />
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cornerRadius="@dimen/corner"
+                android:text="@string/login"
+                android:padding="@dimen/margin"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

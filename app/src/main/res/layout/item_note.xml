@@ -74,6 +74,7 @@
         android:orientation="horizontal"
         android:weightSum="2">
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/item_note_btn_snooze"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
